@@ -35,7 +35,8 @@ public class laMain {
 		
 		System.out.println("El promedio del total de las edades es de "+ promedio);
 		System.out.println("El total de personas del genero masculino es de "+totalMacs);
-		
+		System.out.println("El total de personas del genero femenino es de "+ totalFem);
+
 
 	}
 	public static int contarM (persona [] persona) {
