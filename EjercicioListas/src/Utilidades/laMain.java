@@ -7,12 +7,12 @@ import Entidades.persona;
 
 public class laMain {
 	
-	public static double promedioEdades(persona[] persona) {
+	public static double promedioEdades(List<persona> listita) {
         int totalEdades = 0;
-        for (persona personas : persona) {
+        for (persona personas : listita) {
             totalEdades += personas.getEdad();
         }
-        return (double) totalEdades / persona.length;}
+        return (double) totalEdades / listita.size();}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -27,10 +27,10 @@ public class laMain {
 		for (int i=0; i<listalinked.size();i++) {
 			System.out.println("El nombre completo de la persona es "+ listalinked.get(i).getNombre() + " "+listalinked.get(i).getApellido()+ " y pertenece al genero "+ listalinked.get(i).getGenero());
 		}
-		persona[] personasArray = listalinked.toArray(new persona[0]);
-		double promedio = promedioEdades(personasArray);
-		int totalMacs = contarM(personasArray);
-		int totalFem= contarF(personasArray);
+		//persona[] personasArray = listalinked.toArray(new persona[0]);
+		double promedio = promedioEdades(listalinked);
+		int totalMacs = contarM(listalinked);
+		int totalFem= contarF(listalinked);
 		
 		
 		System.out.println("El promedio del total de las edades es de "+ promedio);
@@ -39,18 +39,20 @@ public class laMain {
 
 
 	}
-	public static int contarM (persona [] persona) {
+	public static int contarM (List <persona> machos) {
         int cont = 0;
-        for (persona persona1: persona){
-            if (persona1.getGenero() == "masculino") {
-                cont++;
-            }
+        for (persona persona1: machos){
+           
+        	if (persona1.getGenero().equals("masculino")) {
+        		cont++;
+        	}
+        	
         }
         return cont;}
-	public static int contarF (persona[]persona) {
+	public static int contarF (List<persona>fem) {
         int cont = 0;
-        for (persona persona1: persona){
-            if (persona1.getGenero() == "femenino");
+      for (persona persona1: fem){
+            if (persona1.getGenero().equals ("femenino"));
                 cont++;
             }
         
